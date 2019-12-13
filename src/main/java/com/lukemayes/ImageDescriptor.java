@@ -157,10 +157,11 @@ public class ImageDescriptor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Retrieves photo when open image button is clicked
     private void OpenImageFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenImageFileButtonActionPerformed
         int returnValue1 = openImageFileChooser.showOpenDialog(this);
         BufferedImage bi;
-        
+         
         if(returnValue1 == JFileChooser.APPROVE_OPTION) {
             try {
                 bi = ImageIO.read(openImageFileChooser.getSelectedFile());
@@ -176,6 +177,7 @@ public class ImageDescriptor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OpenImageFileButtonActionPerformed
 
+    // Retrieves description when open image button is clicked
     private void OpenTagsFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenTagsFileButtonActionPerformed
         int returnValue1 = openTagsFileChooser.showOpenDialog(this);
         
@@ -197,6 +199,7 @@ public class ImageDescriptor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OpenTagsFileButtonActionPerformed
 
+    // Retrieves metadata from photo
     private void extractMetadata() throws ImageProcessingException
     {
         try {
@@ -215,6 +218,7 @@ public class ImageDescriptor extends javax.swing.JFrame {
 
     }
     
+    // Extracts metadata, constructs output
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         try {
             extractMetadata();
